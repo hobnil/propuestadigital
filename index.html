@@ -3,362 +3,579 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Propuestas de Servicios Digitales - Consulado General de la República Dominicana en Miami</title>
+    <title>Propuesta de Servicios Digitales - Consulado General de RD en Miami</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Lato:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
     <style>
-        :root {
-            --brand-blue: #002856;
-            --brand-red: #e11e26;
-            --brand-gold: #D4AF37;
-            --brand-green: #00843D;
-            --brand-orange: #F37A20;
-            --light-gray: #f4f7f9;
-        }
         body {
-            font-family: 'Lato', sans-serif;
-            color: var(--brand-blue);
-        }
-        .font-title {
             font-family: 'Montserrat', sans-serif;
         }
-        .bg-brand-blue { background-color: var(--brand-blue); }
-        .text-brand-blue { color: var(--brand-blue); }
-        .bg-brand-red { background-color: var(--brand-red); }
-        .text-brand-red { color: var(--brand-red); }
-        .border-brand-blue { border-color: var(--brand-blue); }
-        .border-brand-red { border-color: var(--brand-red); }
-        
-        .section-title {
-            border-left: 5px solid;
-            padding-left: 1rem;
+        .font-lato {
+            font-family: 'Lato', sans-serif;
         }
-        .section-icon {
-            width: 50px;
-            height: 50px;
+        .bg-consulado-azul { background-color: #002856; }
+        .text-consulado-azul { color: #002856; }
+        .bg-consulado-rojo { background-color: #e11e26; }
+        .text-consulado-rojo { color: #e11e26; }
+        .bg-gris-claro { background-color: #f7f7f7; }
+        .section-title {
+            font-family: 'Lato', sans-serif;
+            font-weight: 900;
+            font-size: 2.25rem; /* 36px */
+            line-height: 2.5rem; /* 40px */
+        }
+        .section-subtitle {
+            font-size: 1.125rem; /* 18px */
+            line-height: 1.75rem; /* 28px */
+            color: #4a5568;
+        }
+        .feature-icon {
+            width: 2.5rem;
+            height: 2.5rem;
+            padding: 0.5rem;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
+        }
+        .price-tag {
+            background-color: #002856;
             color: white;
-            flex-shrink: 0;
+            padding: 1rem 2rem;
+            border-radius: 0.5rem;
+            font-size: 2rem;
+            font-weight: 700;
+            display: inline-block;
+            box-shadow: 0 4px 14px rgba(0, 0, 0, 0.15);
         }
-        .timeline {
-            position: relative;
-            padding-left: 2.5rem;
+        .price-tag-secondary {
+            background-color: #e2e8f0;
+            color: #002856;
+            padding: 0.5rem 1rem;
+            border-radius: 0.5rem;
+            font-size: 1.25rem;
+            font-weight: 700;
+            display: inline-block;
         }
-        .timeline::before {
-            content: '';
-            position: absolute;
-            left: 0.7rem;
-            top: 0;
-            bottom: 0;
-            width: 2px;
-            background-color: #d1d5db;
+        .cta-button {
+            transition: all 0.3s ease;
+            transform: scale(1);
         }
-        .timeline-item {
-            position: relative;
-        }
-        .timeline-item::before {
-            content: '';
-            position: absolute;
-            left: -2.05rem;
-            top: 0.3rem;
-            width: 1rem;
-            height: 1rem;
-            border-radius: 50%;
-            background-color: white;
-            border: 3px solid var(--brand-blue);
-        }
-        details > summary {
-            list-style: none;
-        }
-        details > summary::-webkit-details-marker {
-            display: none;
-        }
-        details[open] summary .arrow-down {
-            transform: rotate(180deg);
-        }
-        .comparison-table th, .comparison-table td {
-            border: 1px solid #e5e7eb;
-            padding: 1rem;
-            text-align: center;
-        }
-        .comparison-table th {
-            background-color: var(--light-gray);
-        }
-        .comparison-table .feature-name {
-            text-align: left;
-            font-weight: 600;
-        }
-        .comparison-table .check-mark {
-            color: var(--brand-green);
-            font-weight: bold;
-        }
-        .comparison-table .cross-mark {
-            color: #9ca3af;
+        .cta-button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
         }
     </style>
 </head>
-<body class="bg-white">
+<body class="bg-white text-gray-800">
 
-    <!-- Header y Hero Section -->
-    <header class="bg-brand-blue text-white">
-        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <h1 class="font-title text-xl font-bold">Propuestas Digitales</h1>
-            <nav class="hidden md:flex space-x-6">
-                <a href="#servicios" class="hover:text-gray-300">Servicios</a>
-                <a href="#comparativa" class="hover:text-gray-300">Comparativa</a>
-                <a href="#faq" class="hover:text-gray-300">Preguntas Frecuentes</a>
-                <a href="#contacto" class="hover:text-gray-300">Contacto</a>
-            </nav>
-        </div>
-        <div class="container mx-auto px-6 pt-16 pb-24 text-center">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/Escudo_de_la_Rep%C3%BAblica_Dominicana.svg/1200px-Escudo_de_la_Rep%C3%BAblica_Dominicana.svg.png" alt="Escudo de la República Dominicana" class="h-24 mx-auto mb-6" onerror="this.src='https://placehold.co/100x100/ffffff/002856?text=RD';">
-            <h2 class="font-title text-4xl md:text-5xl font-extrabold">Modernizando la Atención Consular</h2>
-            <p class="mt-4 text-lg md:text-xl text-gray-200 max-w-3xl mx-auto">Soluciones digitales a su medida para el Consulado General de la República Dominicana en Miami.</p>
-            <a href="#servicios" class="mt-8 inline-block bg-brand-red text-white font-bold py-3 px-8 rounded-lg text-lg hover:bg-red-700 transition duration-300">Ver Propuestas</a>
+    <!-- Header y Navegación -->
+    <header class="bg-consulado-azul text-white sticky top-0 z-50 shadow-lg">
+        <nav class="container mx-auto px-6 py-3 flex justify-between items-center">
+            <div class="flex items-center">
+                <img src="https://placehold.co/100x100/ffffff/002856?text=Escudo+RD" alt="Escudo de la República Dominicana" class="h-12 w-12 mr-4">
+                <a href="#" class="text-xl font-bold font-lato">Consulado RD | Miami</a>
+            </div>
+            <div class="hidden md:flex space-x-6 items-center">
+                <a href="#chatbot-setup" class="hover:text-gray-300">Chatbot</a>
+                <a href="#chatbot-support" class="hover:text-gray-300">Soporte</a>
+                <a href="#web-design" class="hover:text-gray-300">Diseño Web</a>
+                <a href="#web-management" class="hover:text-gray-300">Web + Gestión</a>
+                <a href="#compare" class="hover:text-gray-300">Comparativa</a>
+                <a href="#contact" class="bg-consulado-rojo px-4 py-2 rounded-md font-bold hover:bg-red-700 transition-colors">Contactar</a>
+            </div>
+            <div class="md:hidden">
+                <button id="mobile-menu-button" class="text-white focus:outline-none">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+                </button>
+            </div>
+        </nav>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-consulado-azul/95 backdrop-blur-sm">
+            <a href="#chatbot-setup" class="block py-2 px-4 text-sm hover:bg-consulado-rojo">Chatbot</a>
+            <a href="#chatbot-support" class="block py-2 px-4 text-sm hover:bg-consulado-rojo">Soporte</a>
+            <a href="#web-design" class="block py-2 px-4 text-sm hover:bg-consulado-rojo">Diseño Web</a>
+            <a href="#web-management" class="block py-2 px-4 text-sm hover:bg-consulado-rojo">Web + Gestión</a>
+            <a href="#compare" class="block py-2 px-4 text-sm hover:bg-consulado-rojo">Comparativa</a>
+            <a href="#contact" class="block py-2 px-4 text-sm hover:bg-consulado-rojo">Contactar</a>
         </div>
     </header>
 
-    <main id="servicios" class="container mx-auto px-6 py-16">
+    <!-- Hero Section -->
+    <section class="bg-consulado-azul text-white py-20 md:py-32">
+        <div class="container mx-auto px-6 text-center">
+            <h1 class="text-4xl md:text-6xl font-extrabold font-lato leading-tight mb-4">Modernizando la Atención Consular</h1>
+            <p class="text-lg md:text-xl text-gray-300 max-w-3xl mx-auto">Propuesta de servicios digitales para optimizar la comunicación y la presencia en línea del Consulado General de la República Dominicana en Miami.</p>
+            <a href="#compare" class="mt-8 inline-block bg-consulado-rojo text-white font-bold py-3 px-8 rounded-lg text-lg cta-button">Ver Soluciones</a>
+        </div>
+    </section>
 
-        <!-- Sección 1: Chatbot Contratado -->
-        <section class="mb-20">
+    <!-- 🟦 Servicio Contratado: Chatbot Setup -->
+    <section id="chatbot-setup" class="py-20">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-12">
+                <span class="text-sm font-bold uppercase text-consulado-rojo">Servicio Contratado</span>
+                <h2 class="section-title text-consulado-azul">Instalación y Configuración del Chatbot</h2>
+                <p class="section-subtitle max-w-2xl mx-auto">Implementación inicial del asistente virtual "MIA" para automatizar las consultas frecuentes.</p>
+            </div>
+
+            <div class="bg-green-100 border-l-4 border-green-500 text-green-700 p-4 rounded-md mb-12 max-w-4xl mx-auto" role="alert">
+                <p class="font-bold">Servicio Finalizado</p>
+                <p>Este servicio ya ha sido completado. Queda pendiente el 50% correspondiente al segundo pago para cerrar el proyecto: <strong class="text-lg">144,50 €</strong>.</p>
+            </div>
+
             <div class="grid md:grid-cols-2 gap-12 items-center">
                 <div>
-                    <div class="section-icon bg-brand-blue mb-4">
-                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"></path></svg>
-                    </div>
-                    <h3 class="font-title text-3xl font-bold section-title" style="border-color: var(--brand-blue);">Servicio Contratado: Chatbot MIA</h3>
-                    <p class="mt-4 text-gray-600">Implementación y configuración del asistente virtual para optimizar la atención ciudadana. Este servicio ya ha sido acordado y se encuentra en proceso.</p>
-                    <div class="mt-6 space-y-3">
-                        <div class="flex items-start"><div class="check-mark text-brand-blue mr-3 mt-1">✓</div><span>Soporte de implementación mano a mano.</span></div>
-                        <div class="flex items-start"><div class="check-mark text-brand-blue mr-3 mt-1">✓</div><span>Pruebas y optimización durante las 2 primeras semanas.</span></div>
-                        <div class="flex items-start"><div class="check-mark text-brand-blue mr-3 mt-1">✓</div><span>Plantilla de entrenamiento personalizable.</span></div>
-                    </div>
-                </div>
-                <div class="bg-light-gray p-8 rounded-lg">
-                    <h4 class="font-title font-bold text-lg mb-4">Proceso de Implementación</h4>
-                    <div class="timeline">
-                        <div class="timeline-item pb-8">
-                            <h5 class="font-bold">Instalación y Configuración</h5>
-                            <p class="text-sm text-gray-500">2-3 Horas</p>
-                            <p class="text-sm">Conexión inicial y puesta en marcha del sistema.</p>
-                        </div>
-                        <div class="timeline-item">
-                            <h5 class="font-bold">Soporte y Optimización</h5>
-                            <p class="text-sm text-gray-500">2 Semanas</p>
-                            <p class="text-sm">Ajustes basados en el uso real y resolución de incidencias.</p>
-                        </div>
-                    </div>
-                    <div class="mt-6 bg-white p-4 rounded-md text-center">
-                        <p class="text-sm text-gray-500">Coste del Servicio</p>
-                        <p class="font-title text-3xl font-bold text-brand-blue">289 USD</p>
-                        <p class="text-xs text-gray-500">Pago Único</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Sección 2: Soporte Chatbot -->
-        <section class="mb-20">
-            <div class="grid md:grid-cols-2 gap-12 items-center">
-                <div class="order-2 md:order-1 bg-light-gray p-8 rounded-lg">
-                    <h4 class="font-title font-bold text-lg mb-4">Beneficios del Soporte Continuo</h4>
-                     <ul class="space-y-3 text-gray-700">
-                        <li class="flex items-center"><svg class="w-5 h-5 text-brand-gold mr-2" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>Atención 24/7 garantizada.</li>
-                        <li class="flex items-center"><svg class="w-5 h-5 text-brand-gold mr-2" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>Optimización técnica permanente.</li>
-                        <li class="flex items-center"><svg class="w-5 h-5 text-brand-gold mr-2" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>Actualizaciones de contenido mensuales.</li>
-                        <li class="flex items-center"><svg class="w-5 h-5 text-brand-gold mr-2" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>Hasta 2 actualizaciones urgentes al mes.</li>
-                     </ul>
-                    <div class="mt-6 flex flex-wrap gap-4">
-                        <div class="flex-1 bg-white p-4 rounded-md text-center min-w-[150px]">
-                            <p class="text-sm text-gray-500">Pago Mensual</p>
-                            <p class="font-title text-3xl font-bold text-brand-blue">29 USD</p>
-                        </div>
-                        <div class="flex-1 bg-white p-4 rounded-md text-center border-2 border-brand-gold min-w-[150px]">
-                            <p class="text-sm text-gray-500">Pago Anual (Ahorro)</p>
-                            <p class="font-title text-3xl font-bold text-brand-blue">324 USD</p>
-                            <p class="text-xs text-gray-500">(equiv. a 27 USD/mes)</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="order-1 md:order-2">
-                    <div class="section-icon bg-brand-gold mb-4">
-                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-                    </div>
-                    <h3 class="font-title text-3xl font-bold section-title" style="border-color: var(--brand-gold);">Propuesta: Soporte y Mantenimiento de Chatbot</h3>
-                    <p class="mt-4 text-gray-600">Garantice el funcionamiento óptimo y actualizado del asistente virtual MIA, asegurando una experiencia de atención al ciudadano eficiente, clara y 100% alineada con los servicios consulares.</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- Sección 3: Diseño Web -->
-        <section class="mb-20">
-            <div class="grid md:grid-cols-2 gap-12 items-center">
-                <div>
-                    <div class="section-icon bg-brand-green mb-4">
-                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
-                    </div>
-                    <h3 class="font-title text-3xl font-bold section-title" style="border-color: var(--brand-green);">Propuesta: Diseño Web Institucional</h3>
-                    <p class="mt-4 text-gray-600">Un sitio web moderno, responsivo y funcional, alineado con la identidad gráfica del MIREX y orientado a mejorar el acceso a los servicios consulares.</p>
-                    <ul class="mt-6 space-y-3">
-                        <li class="flex items-start"><div class="check-mark text-brand-green mr-3 mt-1">✓</div><span>Diseño 100% administrable en WordPress.</span></div>
-                        <li class="flex items-start"><div class="check-mark text-brand-green mr-3 mt-1">✓</div><span>Adaptado a móviles, tabletas y escritorio.</span></div>
-                        <li class="flex items-start"><div class="check-mark text-brand-green mr-3 mt-1">✓</div><span>Integración de Chatbot, Google Maps y redes sociales.</span></div>
-                        <li class="flex items-start"><div class="check-mark text-brand-green mr-3 mt-1">✓</div><span>Secciones clave: Inicio, Servicios, Contacto, Noticias, etc.</span></div>
+                    <h3 class="text-2xl font-bold mb-4 text-consulado-azul">Entregables Clave</h3>
+                    <ul class="space-y-4">
+                        <li class="flex items-start">
+                            <div class="feature-icon bg-blue-100 text-blue-600 mr-4">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z" /></svg>
+                            </div>
+                            <div>
+                                <h4 class="font-bold">Implementación y Pruebas</h4>
+                                <p class="text-gray-600">Instalación del chatbot en los canales acordados y tests iniciales para garantizar su funcionamiento.</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start">
+                            <div class="feature-icon bg-blue-100 text-blue-600 mr-4">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.096 2.572-1.065z" /><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" /></svg>
+                            </div>
+                            <div>
+                                <h4 class="font-bold">Optimización Inicial</h4>
+                                <p class="text-gray-600">Ajustes y mejoras durante las primeras 2 semanas de uso para afinar las respuestas.</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start">
+                            <div class="feature-icon bg-blue-100 text-blue-600 mr-4">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" /></svg>
+                            </div>
+                            <div>
+                                <h4 class="font-bold">Plantilla de Entrenamiento</h4>
+                                <p class="text-gray-600">Entrega de la plantilla base para que el personal del consulado pueda personalizarla.</p>
+                            </div>
+                        </li>
                     </ul>
                 </div>
-                <div class="bg-light-gray p-8 rounded-lg">
-                    <h4 class="font-title font-bold text-lg mb-4">Tiempo Estimado de Entrega</h4>
-                    <p class="font-title text-5xl font-bold text-brand-blue">15-25</p>
-                    <p class="text-lg">Días hábiles</p>
-                    <p class="text-sm text-gray-500 mt-2">Desde la aprobación del diseño y entrega del contenido.</p>
-                    <div class="mt-6 bg-white p-4 rounded-md text-center">
-                        <p class="text-sm text-gray-500">Coste del Servicio</p>
-                        <p class="font-title text-3xl font-bold text-brand-blue">549 USD</p>
-                        <p class="text-xs text-gray-500">Pago Único</p>
+                <div class="text-center">
+                    <div class="price-tag mb-4">$289 USD</div>
+                    <p class="text-gray-600 font-bold">Pago Único</p>
+                    <div class="mt-8">
+                        <h4 class="font-bold text-lg mb-2 text-consulado-azul">Proceso de Implementación</h4>
+                        <div class="relative pt-1">
+                            <div class="overflow-hidden h-4 text-xs flex rounded-full bg-blue-200">
+                                <div style="width:100%" class="shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center bg-consulado-azul"></div>
+                            </div>
+                            <div class="flex justify-between text-xs mt-2 text-gray-500">
+                                <span>Config.</span>
+                                <span>Pruebas</span>
+                                <span>Optimización</span>
+                                <span>Entregado</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- Sección 4: Diseño Web + Soporte -->
-        <section class="mb-20">
+    <!-- 🟨 Propuesta: Soporte y Mantenimiento Chatbot -->
+    <section id="chatbot-support" class="py-20 bg-gris-claro">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-12">
+                <span class="text-sm font-bold uppercase text-consulado-rojo">Propuesta Adicional</span>
+                <h2 class="section-title text-consulado-azul">Soporte y Mantenimiento del Chatbot</h2>
+                <p class="section-subtitle max-w-2xl mx-auto">Garantiza el funcionamiento óptimo y la actualización constante del asistente virtual "MIA".</p>
+            </div>
             <div class="grid md:grid-cols-2 gap-12 items-center">
-                <div class="order-2 md:order-1 bg-light-gray p-8 rounded-lg">
-                    <h4 class="font-title font-bold text-lg mb-4">El Paquete Todo Incluido</h4>
-                     <ul class="space-y-3 text-gray-700">
-                        <li class="flex items-center"><svg class="w-5 h-5 text-brand-orange mr-2" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg><strong>Todo lo del Diseño Web Institucional, MÁS:</strong></li>
-                        <li class="flex items-center pl-7"><svg class="w-5 h-5 text-brand-orange mr-2" fill="currentColor" viewBox="0 0 20 20"><path d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z"></path></svg>Hosting y Dominio incluidos.</li>
-                        <li class="flex items-center pl-7"><svg class="w-5 h-5 text-brand-orange mr-2" fill="currentColor" viewBox="0 0 20 20"><path d="M5 4a1 1 0 00-2 0v7.268a2 2 0 000 3.464V16a1 1 0 102 0v-1.268a2 2 0 000-3.464V4zM11 4a1 1 0 10-2 0v1.268a2 2 0 000 3.464V16a1 1 0 102 0V8.732a2 2 0 000-3.464V4zM16 3a1 1 0 011 1v7.268a2 2 0 010 3.464V16a1 1 0 11-2 0v-1.268a2 2 0 010-3.464V4a1 1 0 011-1z"></path></svg>Soporte técnico y actualizaciones mensuales.</li>
-                        <li class="flex items-center pl-7"><svg class="w-5 h-5 text-brand-orange mr-2" fill="currentColor" viewBox="0 0 20 20"><path d="M17.414 2.586a2 2 0 00-2.828 0L7 10.172V13h2.828l7.586-7.586a2 2 0 000-2.828z"></path><path fill-rule="evenodd" d="M2 6a2 2 0 012-2h4a1 1 0 010 2H4v10h10v-4a1 1 0 112 0v4a2 2 0 01-2 2H4a2 2 0 01-2-2V6z" clip-rule="evenodd"></path></svg>Gestión y subida de contenido institucional.</li>
-                     </ul>
-                    <div class="mt-6 bg-white p-4 rounded-md">
-                        <p class="text-sm text-gray-500">Coste del Servicio</p>
-                        <p class="font-title text-2xl font-bold text-brand-blue">549 USD <span class="text-lg font-normal text-gray-500">(pago único)</span></p>
-                        <p class="font-title text-2xl font-bold text-brand-blue mt-2">+ 324 USD <span class="text-lg font-normal text-gray-500">/ año</span></p>
-                        <p class="text-xs text-gray-500">(Mantenimiento, Hosting y Gestión)</p>
-                    </div>
+                <div class="text-center md:order-2">
+                    <div class="price-tag mb-2">$29 USD</div>
+                    <p class="text-gray-600 font-bold mb-4">/mes</p>
+                    <div class="price-tag-secondary">$324 USD /año (ahorra 2 meses)</div>
+                    <a href="#contact" class="mt-8 inline-block bg-consulado-rojo text-white font-bold py-3 px-8 rounded-lg text-lg cta-button">Contratar Soporte</a>
                 </div>
-                <div class="order-1 md:order-2">
-                    <div class="section-icon bg-brand-orange mb-4">
-                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"></path></svg>
-                    </div>
-                    <h3 class="font-title text-3xl font-bold section-title" style="border-color: var(--brand-orange);">Propuesta Integral: Diseño Web + Gestión</h3>
-                    <p class="mt-4 text-gray-600">La solución definitiva. Nos encargamos del diseño, implementación, alojamiento y mantenimiento continuo de su portal web, para que el consulado pueda centrarse en la atención ciudadana.</p>
+                <div class="md:order-1">
+                    <h3 class="text-2xl font-bold mb-4 text-consulado-azul">Beneficios del Soporte Continuo</h3>
+                    <ul class="space-y-4">
+                        <li class="flex items-start">
+                            <div class="feature-icon bg-yellow-100 text-yellow-600 mr-4">
+                               <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" /></svg>
+                            </div>
+                            <div>
+                                <h4 class="font-bold">Disponibilidad 24/7</h4>
+                                <p class="text-gray-600">Atención automatizada sin interrupciones para los ciudadanos.</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start">
+                            <div class="feature-icon bg-yellow-100 text-yellow-600 mr-4">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 17v-2m3 2v-4m3 4v-6m2 10H7a2 2 0 01-2-2V7a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" /></svg>
+                            </div>
+                            <div>
+                                <h4 class="font-bold">Actualización de Contenido</h4>
+                                <p class="text-gray-600">Integración mensual de la información y documentación actualizada por el consulado.</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start">
+                            <div class="feature-icon bg-yellow-100 text-yellow-600 mr-4">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                            </div>
+                            <div>
+                                <h4 class="font-bold">Resolución Rápida de Incidencias</h4>
+                                <p class="text-gray-600">Soporte técnico para resolver cualquier problema en un plazo de 24-48 horas.</p>
+                            </div>
+                        </li>
+                    </ul>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- Tabla Comparativa -->
-        <section id="comparativa" class="mb-20">
-            <h3 class="font-title text-3xl font-bold text-center mb-12">Compare Nuestras Soluciones Digitales</h3>
+    <!-- 🟩 Propuesta: Diseño Web Institucional -->
+    <section id="web-design" class="py-20">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-12">
+                <span class="text-sm font-bold uppercase text-consulado-rojo">Propuesta Adicional</span>
+                <h2 class="section-title text-consulado-azul">Diseño Web Institucional</h2>
+                <p class="section-subtitle max-w-2xl mx-auto">Una web moderna, adaptable y alineada con la identidad del MIREX para servir a los ciudadanos.</p>
+            </div>
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h3 class="text-2xl font-bold mb-4 text-consulado-azul">Características del Proyecto</h3>
+                    <ul class="space-y-4">
+                        <li class="flex items-start">
+                            <div class="feature-icon bg-green-100 text-green-600 mr-4">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg>
+                            </div>
+                            <div>
+                                <h4 class="font-bold">Diseño Responsivo y Profesional</h4>
+                                <p class="text-gray-600">Experiencia de usuario óptima en móviles, tablets y ordenadores de escritorio.</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start">
+                            <div class="feature-icon bg-green-100 text-green-600 mr-4">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547a2 2 0 00-.547 1.806l.477 2.387a6 6 0 00.517 3.86l.158.318a6 6 0 00.517 3.86l2.387.477a2 2 0 001.806-.547a2 2 0 00.547-1.806l-.477-2.387a6 6 0 00-.517-3.86l-.158-.318a6 6 0 01-.517-3.86l-.477-2.387a2 2 0 01.547-1.806zM15 9.75a3 3 0 11-6 0 3 3 0 016 0z" /></svg>
+                            </div>
+                            <div>
+                                <h4 class="font-bold">Administrable en WordPress</h4>
+                                <p class="text-gray-600">Control total para editar contenidos, noticias y comunicados de forma sencilla.</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start">
+                           <div class="feature-icon bg-green-100 text-green-600 mr-4">
+                               <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" /></svg>
+                            </div>
+                            <div>
+                                <h4 class="font-bold">Optimización SEO Básica</h4>
+                                <p class="text-gray-600">Estructura preparada para un buen posicionamiento en buscadores como Google.</p>
+                            </div>
+                        </li>
+                    </ul>
+                    <p class="text-sm text-gray-500 mt-6">*No incluye hosting, dominio ni redacción de contenidos.</p>
+                </div>
+                <div class="text-center">
+                    <div class="price-tag mb-4">$549 USD</div>
+                    <p class="text-gray-600 font-bold">Pago Único</p>
+                    <p class="text-gray-500 mt-2">Entrega en 15-25 días hábiles</p>
+                    <a href="#contact" class="mt-8 inline-block bg-consulado-rojo text-white font-bold py-3 px-8 rounded-lg text-lg cta-button">Solicitar Diseño Web</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 🟧 Propuesta: Diseño Web + Soporte y Gestión -->
+    <section id="web-management" class="py-20 bg-gris-claro">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-12">
+                <span class="text-sm font-bold uppercase text-consulado-rojo">Solución Integral</span>
+                <h2 class="section-title text-consulado-azul">Diseño Web + Soporte y Gestión</h2>
+                <p class="section-subtitle max-w-2xl mx-auto">La solución todo-en-uno: creamos, gestionamos y mantenemos su presencia digital para que no te preocupes por nada.</p>
+            </div>
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                 <div class="text-center md:order-2">
+                    <div class="price-tag mb-4">$549 USD</div>
+                    <p class="text-gray-600 font-bold">Pago Único (Diseño)</p>
+                    <div class="my-4 font-bold text-2xl">+</div>
+                    <div class="price-tag mb-2">$29 USD</div>
+                    <p class="text-gray-600 font-bold mb-4">/mes (Gestión)</p>
+                    <div class="price-tag-secondary">$324 USD /año (ahorra 2 meses)</div>
+                    <a href="#contact" class="mt-8 inline-block bg-consulado-rojo text-white font-bold py-3 px-8 rounded-lg text-lg cta-button">Contratar Plan Integral</a>
+                </div>
+                <div class="md:order-1">
+                    <h3 class="text-2xl font-bold mb-4 text-consulado-azul">Todo Incluido</h3>
+                    <ul class="space-y-4">
+                        <li class="flex items-start">
+                            <div class="feature-icon bg-orange-100 text-orange-600 mr-4">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
+                            </div>
+                            <div>
+                                <h4 class="font-bold">Incluye todo lo del Plan de Diseño Web</h4>
+                                <p class="text-gray-600">Diseño profesional, WordPress administrable, SEO básico y mucho más.</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start">
+                            <div class="feature-icon bg-orange-100 text-orange-600 mr-4">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21.75 17.25v-.228a4.5 4.5 0 00-.12-1.03l-2.268-9.64a3.375 3.375 0 00-3.285-2.65H8.125a3.375 3.375 0 00-3.285 2.65l-2.268 9.64a4.5 4.5 0 00-.12 1.03v.228m15.562 0a2.25 2.25 0 01-2.25 2.25h-11.062a2.25 2.25 0 01-2.25-2.25m15.562 0v-1.875a3.375 3.375 0 00-3.375-3.375h-9.812a3.375 3.375 0 00-3.375 3.375v1.875" /></svg>
+                            </div>
+                            <div>
+                                <h4 class="font-bold">Hosting y Dominio Incluidos</h4>
+                                <p class="text-gray-600">Alojamiento web profesional y registro de dominio .com o .org.</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start">
+                           <div class="feature-icon bg-orange-100 text-orange-600 mr-4">
+                               <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16.023 9.348h4.992v-.001M2.985 19.644v-4.992m0 0h4.992m-4.993 0l3.181 3.183a8.25 8.25 0 0011.667 0l3.181-3.183m-4.991-2.695v-2.695" /></svg>
+                            </div>
+                            <div>
+                                <h4 class="font-bold">Mantenimiento y Gestión de Contenido</h4>
+                                <p class="text-gray-600">Actualizamos la web, sus componentes y el contenido institucional por ti.</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tabla Comparativa -->
+    <section id="compare" class="py-20">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-12">
+                <h2 class="section-title text-consulado-azul">Compare Nuestras Soluciones Digitales</h2>
+                <p class="section-subtitle max-w-2xl mx-auto">Encuentre el plan que mejor se adapta a las necesidades del consulado.</p>
+            </div>
             <div class="overflow-x-auto">
-                <table class="w-full comparison-table">
+                <table class="w-full text-left border-collapse">
                     <thead>
                         <tr>
-                            <th class="feature-name">Característica</th>
-                            <th>Chatbot (Setup)</th>
-                            <th>Chatbot (Soporte)</th>
-                            <th>Diseño Web</th>
-                            <th class="bg-blue-100">Web Integral</th>
+                            <th class="py-4 px-6 bg-gris-claro font-bold uppercase text-sm text-gray-600 border-b border-gray-200">Característica</th>
+                            <th class="py-4 px-6 bg-blue-50 font-bold uppercase text-sm text-gray-600 border-b border-gray-200 text-center">Chatbot (Setup)</th>
+                            <th class="py-4 px-6 bg-yellow-50 font-bold uppercase text-sm text-gray-600 border-b border-gray-200 text-center">Soporte Chatbot</th>
+                            <th class="py-4 px-6 bg-green-50 font-bold uppercase text-sm text-gray-600 border-b border-gray-200 text-center">Diseño Web</th>
+                            <th class="py-4 px-6 bg-orange-50 font-bold uppercase text-sm text-gray-600 border-b border-gray-200 text-center">Web + Gestión</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td class="feature-name">Implementación de Chatbot</td>
-                            <td class="check-mark">✓</td><td class="check-mark">✓</td><td class="check-mark">✓</td><td class="check-mark">✓</td>
+                        <tr class="hover:bg-gray-50">
+                            <td class="py-4 px-6 border-b border-gray-200">Precio</td>
+                            <td class="py-4 px-6 border-b border-gray-200 text-center font-bold">$289 USD <span class="block text-xs font-normal">(pago único)</span></td>
+                            <td class="py-4 px-6 border-b border-gray-200 text-center font-bold">$29 USD <span class="block text-xs font-normal">/mes</span></td>
+                            <td class="py-4 px-6 border-b border-gray-200 text-center font-bold">$549 USD <span class="block text-xs font-normal">(pago único)</span></td>
+                            <td class="py-4 px-6 border-b border-gray-200 text-center font-bold">$549 + $29/mes</td>
                         </tr>
-                        <tr>
-                            <td class="feature-name">Soporte y Mantenimiento de Chatbot</td>
-                            <td class="cross-mark">2 semanas</td><td class="check-mark">Continuo</td><td class="cross-mark">✗</td><td class="check-mark">Continuo</td>
+                        <tr class="hover:bg-gray-50">
+                            <td class="py-4 px-6 border-b border-gray-200">Estado</td>
+                            <td class="py-4 px-6 border-b border-gray-200 text-center"><span class="bg-green-200 text-green-800 py-1 px-3 rounded-full text-xs font-bold">Contratado y Terminado</span></td>
+                            <td class="py-4 px-6 border-b border-gray-200 text-center"><span class="bg-blue-200 text-blue-800 py-1 px-3 rounded-full text-xs">Propuesta</span></td>
+                            <td class="py-4 px-6 border-b border-gray-200 text-center"><span class="bg-blue-200 text-blue-800 py-1 px-3 rounded-full text-xs">Propuesta</span></td>
+                            <td class="py-4 px-6 border-b border-gray-200 text-center"><span class="bg-blue-200 text-blue-800 py-1 px-3 rounded-full text-xs">Propuesta</span></td>
                         </tr>
-                        <tr>
-                            <td class="feature-name">Diseño Web Institucional</td>
-                            <td class="cross-mark">✗</td><td class="cross-mark">✗</td><td class="check-mark">✓</td><td class="check-mark">✓</td>
+                        <tr class="hover:bg-gray-50">
+                            <td class="py-4 px-6 border-b border-gray-200">Instalación Chatbot</td>
+                            <td class="py-4 px-6 border-b border-gray-200 text-center text-green-500 font-bold">✓</td>
+                            <td class="py-4 px-6 border-b border-gray-200 text-center">-</td>
+                            <td class="py-4 px-6 border-b border-gray-200 text-center text-green-500 font-bold">✓</td>
+                            <td class="py-4 px-6 border-b border-gray-200 text-center text-green-500 font-bold">✓</td>
                         </tr>
-                        <tr>
-                            <td class="feature-name">Soporte y Mantenimiento Web</td>
-                            <td class="cross-mark">✗</td><td class="cross-mark">✗</td><td class="cross-mark">✗</td><td class="check-mark">✓</td>
+                        <tr class="hover:bg-gray-50">
+                            <td class="py-4 px-6 border-b border-gray-200">Mantenimiento Chatbot</td>
+                            <td class="py-4 px-6 border-b border-gray-200 text-center">-</td>
+                            <td class="py-4 px-6 border-b border-gray-200 text-center text-green-500 font-bold">✓</td>
+                            <td class="py-4 px-6 border-b border-gray-200 text-center">-</td>
+                            <td class="py-4 px-6 border-b border-gray-200 text-center text-green-500 font-bold">✓</td>
                         </tr>
-                        <tr>
-                            <td class="feature-name">Hosting y Dominio</td>
-                            <td class="cross-mark">✗</td><td class="cross-mark">✗</td><td class="cross-mark">✗</td><td class="check-mark">✓</td>
+                        <tr class="hover:bg-gray-50">
+                            <td class="py-4 px-6 border-b border-gray-200">Diseño Web WordPress</td>
+                            <td class="py-4 px-6 border-b border-gray-200 text-center">-</td>
+                            <td class="py-4 px-6 border-b border-gray-200 text-center">-</td>
+                            <td class="py-4 px-6 border-b border-gray-200 text-center text-green-500 font-bold">✓</td>
+                            <td class="py-4 px-6 border-b border-gray-200 text-center text-green-500 font-bold">✓</td>
                         </tr>
-                        <tr>
-                            <td class="feature-name">Gestión de Contenido</td>
-                            <td class="cross-mark">✗</td><td class="cross-mark">✗</td><td class="cross-mark">✗</td><td class="check-mark">✓</td>
+                        <tr class="hover:bg-gray-50">
+                            <td class="py-4 px-6 border-b border-gray-200">Hosting y Dominio</td>
+                            <td class="py-4 px-6 border-b border-gray-200 text-center">-</td>
+                            <td class="py-4 px-6 border-b border-gray-200 text-center">-</td>
+                            <td class="py-4 px-6 border-b border-gray-200 text-center">-</td>
+                            <td class="py-4 px-6 border-b border-gray-200 text-center text-green-500 font-bold">✓</td>
                         </tr>
-                        <tr class="font-bold">
-                            <td class="feature-name">Coste Inicial</td>
-                            <td>289 USD</td><td>N/A</td><td>549 USD</td><td>549 USD</td>
-                        </tr>
-                        <tr class="font-bold">
-                            <td class="feature-name">Coste Recurrente</td>
-                            <td>N/A</td><td>324 USD / año</td><td>N/A</td><td>324 USD / año</td>
-                        </tr>
-                         <tr>
-                            <td></td>
-                            <td><a href="#contacto" class="bg-gray-200 text-brand-blue font-bold py-2 px-4 rounded-lg hover:bg-gray-300">Contactar</a></td>
-                            <td><a href="#contacto" class="bg-gray-200 text-brand-blue font-bold py-2 px-4 rounded-lg hover:bg-gray-300">Contactar</a></td>
-                            <td><a href="#contacto" class="bg-gray-200 text-brand-blue font-bold py-2 px-4 rounded-lg hover:bg-gray-300">Contactar</a></td>
-                            <td><a href="#contacto" class="bg-brand-red text-white font-bold py-2 px-4 rounded-lg hover:bg-red-700">Seleccionar</a></td>
+                        <tr class="hover:bg-gray-50">
+                            <td class="py-4 px-6 border-b border-gray-200">Gestión de Contenido</td>
+                            <td class="py-4 px-6 border-b border-gray-200 text-center">-</td>
+                            <td class="py-4 px-6 border-b border-gray-200 text-center">-</td>
+                            <td class="py-4 px-6 border-b border-gray-200 text-center">-</td>
+                            <td class="py-4 px-6 border-b border-gray-200 text-center text-green-500 font-bold">✓</td>
                         </tr>
                     </tbody>
                 </table>
             </div>
-        </section>
-
-        <!-- FAQ -->
-        <section id="faq" class="mb-20 max-w-4xl mx-auto">
-            <h3 class="font-title text-3xl font-bold text-center mb-12">Preguntas Frecuentes</h3>
-            <div class="space-y-4">
-                <details class="bg-light-gray p-4 rounded-lg cursor-pointer">
-                    <summary class="font-semibold flex justify-between items-center">
-                        ¿Quién es el propietario del dominio y el sitio web?
-                        <span class="arrow-down transition-transform duration-300">▼</span>
-                    </summary>
-                    <p class="mt-2 text-gray-600">El Consulado es siempre el propietario del 100% de sus activos digitales. El dominio se registrará a nombre del Consulado, y al finalizar cualquier contrato, se entregan todos los accesos y archivos del sitio web.</p>
-                </details>
-                <details class="bg-light-gray p-4 rounded-lg cursor-pointer">
-                    <summary class="font-semibold flex justify-between items-center">
-                        ¿Qué sucede si necesitamos más actualizaciones de las incluidas en el plan integral?
-                        <span class="arrow-down transition-transform duration-300">▼</span>
-                    </summary>
-                    <p class="mt-2 text-gray-600">Las actualizaciones adicionales o funcionalidades complejas no incluidas (ej. sistema de citas) se pueden solicitar en cualquier momento y se presupuestarán por separado, siempre con aprobación previa.</p>
-                </details>
-                <details class="bg-light-gray p-4 rounded-lg cursor-pointer">
-                    <summary class="font-semibold flex justify-between items-center">
-                        ¿Cómo es el proceso de validación del diseño web?
-                        <span class="arrow-down transition-transform duration-300">▼</span>
-                    </summary>
-                    <p class="mt-2 text-gray-600">Presentaremos una propuesta de diseño inicial basada en la identidad del MIREX. A partir de ahí, trabajaremos en conjunto con el equipo del Consulado para realizar los ajustes necesarios hasta obtener la validación final antes de la implementación y publicación.</p>
-                </details>
+            <div class="text-center mt-8">
+                 <a href="https://docs.google.com/document/d/1qaw19jq4LivVh0KiVmjR5c9Tko9_ysq_f1kdVa2fu2M/edit?usp=sharing" target="_blank" class="inline-block bg-consulado-azul text-white font-bold py-3 px-8 rounded-lg text-lg cta-button">
+                    Ver Propuesta Detallada (PDF)
+                </a>
             </div>
-        </section>
-
-        <!-- Contacto -->
-        <section id="contacto" class="bg-brand-blue text-white rounded-lg py-20 px-6 text-center">
-            <h3 class="font-title text-4xl font-bold">¿Listo para transformar la atención consular?</h3>
-            <p class="mt-4 text-lg text-gray-300 max-w-2xl mx-auto">Comencemos hoy mismo a mejorar la experiencia de los ciudadanos dominicanos en Miami.</p>
-            <div class="mt-10 bg-white text-brand-blue inline-block p-6 rounded-lg shadow-2xl">
-                <p class="font-title font-bold text-xl">Hobnil A. Sánchez</p>
-                <p class="mt-2"><a href="tel:+34673802735" class="hover:text-brand-red">+34 673 80 27 35</a></p>
-                <p><a href="mailto:hola@hobnilsanchez.com" class="hover:text-brand-red">hola@hobnilsanchez.com</a></p>
+        </div>
+    </section>
+    
+    <!-- Próximos Pasos -->
+    <section id="next-steps" class="py-20 bg-gris-claro">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-12">
+                <h2 class="section-title text-consulado-azul">Próximos Pasos</h2>
+                <p class="section-subtitle max-w-2xl mx-auto">Nuestro proceso para iniciar la colaboración en los nuevos servicios.</p>
             </div>
-            <div class="mt-8 space-x-4">
-                <a href="mailto:hola@hobnilsanchez.com" class="bg-brand-red text-white font-bold py-3 px-8 rounded-lg text-lg hover:bg-red-700 transition duration-300">Agendar reunión ahora</a>
+            <div class="max-w-4xl mx-auto">
+                <div class="relative">
+                    <!-- Línea vertical -->
+                    <div class="absolute left-6 top-0 h-full w-0.5 bg-blue-200"></div>
+                    <!-- Pasos -->
+                    <div class="relative mb-8">
+                        <div class="absolute left-6 top-3 w-4 h-4 bg-consulado-azul rounded-full transform -translate-x-1/2"></div>
+                        <div class="ml-12">
+                            <h4 class="font-bold text-lg text-consulado-azul">1. Aprobación y Contratación</h4>
+                            <p class="text-gray-600">Confirmación del servicio o servicios a contratar y firma del acuerdo.</p>
+                        </div>
+                    </div>
+                    <div class="relative mb-8">
+                        <div class="absolute left-6 top-3 w-4 h-4 bg-consulado-azul rounded-full transform -translate-x-1/2"></div>
+                        <div class="ml-12">
+                            <h4 class="font-bold text-lg text-consulado-azul">2. Reunión de Kick-off</h4>
+                            <p class="text-gray-600">Sesión inicial para definir objetivos, cronogramas y requerimientos.</p>
+                        </div>
+                    </div>
+                    <div class="relative mb-8">
+                        <div class="absolute left-6 top-3 w-4 h-4 bg-consulado-azul rounded-full transform -translate-x-1/2"></div>
+                        <div class="ml-12">
+                            <h4 class="font-bold text-lg text-consulado-azul">3. Requisitos del Cliente</h4>
+                            <p class="text-gray-600">Entrega de accesos, contenidos, imágenes y toda la información necesaria por parte del consulado. <strong class="text-consulado-rojo">Este paso es crucial para cumplir con las fechas de entrega.</strong></p>
+                        </div>
+                    </div>
+                    <div class="relative">
+                        <div class="absolute left-6 top-3 w-4 h-4 bg-consulado-azul rounded-full transform -translate-x-1/2"></div>
+                        <div class="ml-12">
+                            <h4 class="font-bold text-lg text-consulado-azul">4. Desarrollo y Revisiones</h4>
+                            <p class="text-gray-600">Comienza el trabajo de diseño y desarrollo, con puntos de control para la validación del cliente.</p>
+                        </div>
+                    </div>
+                </div>
             </div>
-        </section>
-    </main>
+        </div>
+    </section>
 
-    <footer class="text-center py-8 text-sm text-gray-500">
-        <p>&copy; 2024 Hobnil A. Sánchez. Propuesta de Servicios Digitales.</p>
+    <!-- Preguntas Frecuentes -->
+    <section id="faq" class="py-20" x-data="{ open: null }">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-12">
+                <h2 class="section-title text-consulado-azul">Preguntas Frecuentes</h2>
+                <p class="section-subtitle max-w-2xl mx-auto">Resolvemos las dudas más comunes sobre nuestros servicios.</p>
+            </div>
+            <div class="max-w-3xl mx-auto">
+                <div class="border-b">
+                    <button @click="open = open === 1 ? null : 1" class="w-full text-left py-4 flex justify-between items-center">
+                        <span class="text-lg font-semibold">¿Qué sucede si necesitamos más de 2 actualizaciones urgentes en el chatbot al mes?</span>
+                        <svg class="w-6 h-6 transform transition-transform" :class="{'rotate-180': open === 1}" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </button>
+                    <div x-show="open === 1" x-collapse class="pt-2 pb-4 text-gray-600">
+                        El plan de soporte estándar cubre hasta 2 actualizaciones urgentes. Si se requiere un volumen mayor de forma recurrente, podemos ajustar el plan con un presupuesto personalizado para adaptarnos a las necesidades del consulado. Las actualizaciones no urgentes se gestionan en el ciclo mensual sin coste adicional.
+                    </div>
+                </div>
+                <div class="border-b">
+                    <button @click="open = open === 2 ? null : 2" class="w-full text-left py-4 flex justify-between items-center">
+                        <span class="text-lg font-semibold">En el plan de diseño web, ¿quién se encarga del dominio y el hosting?</span>
+                        <svg class="w-6 h-6 transform transition-transform" :class="{'rotate-180': open === 2}" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </button>
+                    <div x-show="open === 2" x-collapse class="pt-2 pb-4 text-gray-600">
+                        Para la propuesta de "Diseño Web Institucional", el cliente (el consulado) debe proveer el servicio de hosting (alojamiento web) y el dominio. Nosotros nos encargamos de la implementación y configuración en dicho servidor. En la propuesta "Diseño Web + Soporte y Gestión", nosotros nos encargamos de todo: hosting, dominio y mantenimiento.
+                    </div>
+                </div>
+                <div class="border-b">
+                    <button @click="open = open === 3 ? null : 3" class="w-full text-left py-4 flex justify-between items-center">
+                        <span class="text-lg font-semibold">¿Qué tipo de "contenido" debemos entregar para la web?</span>
+                        <svg class="w-6 h-6 transform transition-transform" :class="{'rotate-180': open === 3}" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </button>
+                    <div x-show="open === 3" x-collapse class="pt-2 pb-4 text-gray-600">
+                        El consulado deberá proporcionar todos los textos (descripciones de servicios, historia, noticias), imágenes institucionales (fotos del consul, equipo, instalaciones), logos oficiales en alta calidad y cualquier documento PDF que deba estar disponible para descarga. La puntualidad en esta entrega es clave para cumplir los plazos.
+                    </div>
+                </div>
+                <div class="border-b">
+                    <button @click="open = open === 4 ? null : 4" class="w-full text-left py-4 flex justify-between items-center">
+                        <span class="text-lg font-semibold">¿Cómo se realiza el pago pendiente del servicio de Chatbot?</span>
+                        <svg class="w-6 h-6 transform transition-transform" :class="{'rotate-180': open === 4}" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </button>
+                    <div x-show="open === 4" x-collapse class="pt-2 pb-4 text-gray-600">
+                        Se emitirá la factura correspondiente (Factura 2) por el importe de 144,50 € para ser abonada. Una vez recibido el pago, el proyecto de instalación del chatbot quedará administrativamente cerrado.
+                    </div>
+                </div>
+                 <div class="border-b">
+                    <button @click="open = open === 5 ? null : 5" class="w-full text-left py-4 flex justify-between items-center">
+                        <span class="text-lg font-semibold">¿El plan "Web + Gestión" incluye la creación de nuevas secciones en el futuro?</span>
+                        <svg class="w-6 h-6 transform transition-transform" :class="{'rotate-180': open === 5}" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </button>
+                    <div x-show="open === 5" x-collapse class="pt-2 pb-4 text-gray-600">
+                        El plan cubre la gestión y actualización del contenido dentro de la estructura web existente. La creación de nuevas secciones o funcionalidades complejas (como un sistema de citas o formularios avanzados) no está incluida y se presupuestaría por separado como un nuevo proyecto.
+                    </div>
+                </div>
+                 <div class="border-b">
+                    <button @click="open = open === 6 ? null : 6" class="w-full text-left py-4 flex justify-between items-center">
+                        <span class="text-lg font-semibold">¿Recibiremos formación para gestionar la web?</span>
+                        <svg class="w-6 h-6 transform transition-transform" :class="{'rotate-180': open === 6}" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </button>
+                    <div x-show="open === 6" x-collapse class="pt-2 pb-4 text-gray-600">
+                        Sí. Al finalizar cualquiera de los proyectos de diseño web, se incluye una sesión de formación virtual para explicar al personal designado cómo realizar las tareas básicas de administración en WordPress: editar textos, cambiar imágenes, subir noticias y gestionar documentos.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contacto y Cierre -->
+    <section id="contact" class="bg-consulado-azul text-white py-20">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-4xl font-bold font-lato mb-4">¿Listo para transformar la atención consular?</h2>
+            <p class="text-lg text-gray-300 mb-10">Comencemos hoy mismo a mejorar la experiencia de los ciudadanos.</p>
+
+            <div class="bg-white text-gray-800 rounded-lg shadow-2xl p-8 max-w-sm mx-auto mb-10 text-left">
+                <h3 class="font-bold text-2xl text-consulado-azul mb-4">Hobnil A. Sánchez</h3>
+                <p class="flex items-center mb-3">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-3 text-consulado-rojo" viewBox="0 0 20 20" fill="currentColor"><path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.518.759a11.03 11.03 0 004.438 4.438l.759-1.518a1 1 0 011.06-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" /></svg>
+                    <span>+34 673 80 27 35</span>
+                </p>
+                <p class="flex items-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-3 text-consulado-rojo" viewBox="0 0 20 20" fill="currentColor"><path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z" /><path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" /></svg>
+                    <span>hola@hobnilsanchez.com</span>
+                </p>
+            </div>
+
+            <div class="space-y-4 md:space-y-0 md:space-x-4">
+                <a href="mailto:hola@hobnilsanchez.com" class="inline-block bg-consulado-rojo text-white font-bold py-3 px-8 rounded-lg text-lg cta-button">Agendar reunión ahora</a>
+                <a href="#faq" class="inline-block bg-white text-consulado-azul font-bold py-3 px-8 rounded-lg text-lg cta-button">Resolver dudas</a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-gray-800 text-white py-6">
+        <div class="container mx-auto px-6 text-center text-sm">
+            <p>&copy; 2024 Hobnil A. Sánchez. Propuesta de servicios digitales. Todos los derechos reservados.</p>
+        </div>
     </footer>
+
+    <script>
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Close mobile menu when a link is clicked
+        const mobileMenuLinks = mobileMenu.getElementsByTagName('a');
+        for (let i = 0; i < mobileMenuLinks.length; i++) {
+            mobileMenuLinks[i].addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        }
+    </script>
 
 </body>
 </html>
