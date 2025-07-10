@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Propuestas de Servicios Digitales - Consulado General de la República Dominicana en Miami</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Lato:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --brand-blue: #002856;
+            --brand-red: #e11e26;
+            --brand-gold: #D4AF37;
+            --brand-green: #00843D;
+            --brand-orange: #F37A20;
+            --light-gray: #f4f7f9;
+        }
+        body {
+            font-family: 'Lato', sans-serif;
+            color: var(--brand-blue);
+        }
+        .font-title {
+            font-family: 'Montserrat', sans-serif;
+        }
+        .bg-brand-blue { background-color: var(--brand-blue); }
+        .text-brand-blue { color: var(--brand-blue); }
+        .bg-brand-red { background-color: var(--brand-red); }
+        .text-brand-red { color: var(--brand-red); }
+        .border-brand-blue { border-color: var(--brand-blue); }
+        .border-brand-red { border-color: var(--brand-red); }
+        
+        .section-title {
+            border-left: 5px solid;
+            padding-left: 1rem;
+        }
+        .section-icon {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            flex-shrink: 0;
+        }
+        .timeline {
+            position: relative;
+            padding-left: 2.5rem;
+        }
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 0.7rem;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background-color: #d1d5db;
+        }
+        .timeline-item {
+            position: relative;
+        }
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -2.05rem;
+            top: 0.3rem;
+            width: 1rem;
+            height: 1rem;
+            border-radius: 50%;
+            background-color: white;
+            border: 3px solid var(--brand-blue);
+        }
+        details > summary {
+            list-style: none;
+        }
+        details > summary::-webkit-details-marker {
+            display: none;
+        }
+        details[open] summary .arrow-down {
+            transform: rotate(180deg);
+        }
+        .comparison-table th, .comparison-table td {
+            border: 1px solid #e5e7eb;
+            padding: 1rem;
+            text-align: center;
+        }
+        .comparison-table th {
+            background-color: var(--light-gray);
+        }
+        .comparison-table .feature-name {
+            text-align: left;
+            font-weight: 600;
+        }
+        .comparison-table .check-mark {
+            color: var(--brand-green);
+            font-weight: bold;
+        }
+        .comparison-table .cross-mark {
+            color: #9ca3af;
+        }
+    </style>
+</head>
+<body class="bg-white">
+
+    <!-- Header y Hero Section -->
+    <header class="bg-brand-blue text-white">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <h1 class="font-title text-xl font-bold">Propuestas Digitales</h1>
+            <nav class="hidden md:flex space-x-6">
+                <a href="#servicios" class="hover:text-gray-300">Servicios</a>
+                <a href="#comparativa" class="hover:text-gray-300">Comparativa</a>
+                <a href="#faq" class="hover:text-gray-300">Preguntas Frecuentes</a>
+                <a href="#contacto" class="hover:text-gray-300">Contacto</a>
+            </nav>
+        </div>
+        <div class="container mx-auto px-6 pt-16 pb-24 text-center">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/Escudo_de_la_Rep%C3%BAblica_Dominicana.svg/1200px-Escudo_de_la_Rep%C3%BAblica_Dominicana.svg.png" alt="Escudo de la República Dominicana" class="h-24 mx-auto mb-6" onerror="this.src='https://placehold.co/100x100/ffffff/002856?text=RD';">
+            <h2 class="font-title text-4xl md:text-5xl font-extrabold">Modernizando la Atención Consular</h2>
+            <p class="mt-4 text-lg md:text-xl text-gray-200 max-w-3xl mx-auto">Soluciones digitales a su medida para el Consulado General de la República Dominicana en Miami.</p>
+            <a href="#servicios" class="mt-8 inline-block bg-brand-red text-white font-bold py-3 px-8 rounded-lg text-lg hover:bg-red-700 transition duration-300">Ver Propuestas</a>
+        </div>
+    </header>
+
+    <main id="servicios" class="container mx-auto px-6 py-16">
+
+        <!-- Sección 1: Chatbot Contratado -->
+        <section class="mb-20">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <div class="section-icon bg-brand-blue mb-4">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"></path></svg>
+                    </div>
+                    <h3 class="font-title text-3xl font-bold section-title" style="border-color: var(--brand-blue);">Servicio Contratado: Chatbot MIA</h3>
+                    <p class="mt-4 text-gray-600">Implementación y configuración del asistente virtual para optimizar la atención ciudadana. Este servicio ya ha sido acordado y se encuentra en proceso.</p>
+                    <div class="mt-6 space-y-3">
+                        <div class="flex items-start"><div class="check-mark text-brand-blue mr-3 mt-1">✓</div><span>Soporte de implementación mano a mano.</span></div>
+                        <div class="flex items-start"><div class="check-mark text-brand-blue mr-3 mt-1">✓</div><span>Pruebas y optimización durante las 2 primeras semanas.</span></div>
+                        <div class="flex items-start"><div class="check-mark text-brand-blue mr-3 mt-1">✓</div><span>Plantilla de entrenamiento personalizable.</span></div>
+                    </div>
+                </div>
+                <div class="bg-light-gray p-8 rounded-lg">
+                    <h4 class="font-title font-bold text-lg mb-4">Proceso de Implementación</h4>
+                    <div class="timeline">
+                        <div class="timeline-item pb-8">
+                            <h5 class="font-bold">Instalación y Configuración</h5>
+                            <p class="text-sm text-gray-500">2-3 Horas</p>
+                            <p class="text-sm">Conexión inicial y puesta en marcha del sistema.</p>
+                        </div>
+                        <div class="timeline-item">
+                            <h5 class="font-bold">Soporte y Optimización</h5>
+                            <p class="text-sm text-gray-500">2 Semanas</p>
+                            <p class="text-sm">Ajustes basados en el uso real y resolución de incidencias.</p>
+                        </div>
+                    </div>
+                    <div class="mt-6 bg-white p-4 rounded-md text-center">
+                        <p class="text-sm text-gray-500">Coste del Servicio</p>
+                        <p class="font-title text-3xl font-bold text-brand-blue">289 USD</p>
+                        <p class="text-xs text-gray-500">Pago Único</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección 2: Soporte Chatbot -->
+        <section class="mb-20">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div class="order-2 md:order-1 bg-light-gray p-8 rounded-lg">
+                    <h4 class="font-title font-bold text-lg mb-4">Beneficios del Soporte Continuo</h4>
+                     <ul class="space-y-3 text-gray-700">
+                        <li class="flex items-center"><svg class="w-5 h-5 text-brand-gold mr-2" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>Atención 24/7 garantizada.</li>
+                        <li class="flex items-center"><svg class="w-5 h-5 text-brand-gold mr-2" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>Optimización técnica permanente.</li>
+                        <li class="flex items-center"><svg class="w-5 h-5 text-brand-gold mr-2" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>Actualizaciones de contenido mensuales.</li>
+                        <li class="flex items-center"><svg class="w-5 h-5 text-brand-gold mr-2" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>Hasta 2 actualizaciones urgentes al mes.</li>
+                     </ul>
+                    <div class="mt-6 flex flex-wrap gap-4">
+                        <div class="flex-1 bg-white p-4 rounded-md text-center min-w-[150px]">
+                            <p class="text-sm text-gray-500">Pago Mensual</p>
+                            <p class="font-title text-3xl font-bold text-brand-blue">29 USD</p>
+                        </div>
+                        <div class="flex-1 bg-white p-4 rounded-md text-center border-2 border-brand-gold min-w-[150px]">
+                            <p class="text-sm text-gray-500">Pago Anual (Ahorro)</p>
+                            <p class="font-title text-3xl font-bold text-brand-blue">324 USD</p>
+                            <p class="text-xs text-gray-500">(equiv. a 27 USD/mes)</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="order-1 md:order-2">
+                    <div class="section-icon bg-brand-gold mb-4">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                    </div>
+                    <h3 class="font-title text-3xl font-bold section-title" style="border-color: var(--brand-gold);">Propuesta: Soporte y Mantenimiento de Chatbot</h3>
+                    <p class="mt-4 text-gray-600">Garantice el funcionamiento óptimo y actualizado del asistente virtual MIA, asegurando una experiencia de atención al ciudadano eficiente, clara y 100% alineada con los servicios consulares.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección 3: Diseño Web -->
+        <section class="mb-20">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <div class="section-icon bg-brand-green mb-4">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+                    </div>
+                    <h3 class="font-title text-3xl font-bold section-title" style="border-color: var(--brand-green);">Propuesta: Diseño Web Institucional</h3>
+                    <p class="mt-4 text-gray-600">Un sitio web moderno, responsivo y funcional, alineado con la identidad gráfica del MIREX y orientado a mejorar el acceso a los servicios consulares.</p>
+                    <ul class="mt-6 space-y-3">
+                        <li class="flex items-start"><div class="check-mark text-brand-green mr-3 mt-1">✓</div><span>Diseño 100% administrable en WordPress.</span></div>
+                        <li class="flex items-start"><div class="check-mark text-brand-green mr-3 mt-1">✓</div><span>Adaptado a móviles, tabletas y escritorio.</span></div>
+                        <li class="flex items-start"><div class="check-mark text-brand-green mr-3 mt-1">✓</div><span>Integración de Chatbot, Google Maps y redes sociales.</span></div>
+                        <li class="flex items-start"><div class="check-mark text-brand-green mr-3 mt-1">✓</div><span>Secciones clave: Inicio, Servicios, Contacto, Noticias, etc.</span></div>
+                    </ul>
+                </div>
+                <div class="bg-light-gray p-8 rounded-lg">
+                    <h4 class="font-title font-bold text-lg mb-4">Tiempo Estimado de Entrega</h4>
+                    <p class="font-title text-5xl font-bold text-brand-blue">15-25</p>
+                    <p class="text-lg">Días hábiles</p>
+                    <p class="text-sm text-gray-500 mt-2">Desde la aprobación del diseño y entrega del contenido.</p>
+                    <div class="mt-6 bg-white p-4 rounded-md text-center">
+                        <p class="text-sm text-gray-500">Coste del Servicio</p>
+                        <p class="font-title text-3xl font-bold text-brand-blue">549 USD</p>
+                        <p class="text-xs text-gray-500">Pago Único</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección 4: Diseño Web + Soporte -->
+        <section class="mb-20">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div class="order-2 md:order-1 bg-light-gray p-8 rounded-lg">
+                    <h4 class="font-title font-bold text-lg mb-4">El Paquete Todo Incluido</h4>
+                     <ul class="space-y-3 text-gray-700">
+                        <li class="flex items-center"><svg class="w-5 h-5 text-brand-orange mr-2" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg><strong>Todo lo del Diseño Web Institucional, MÁS:</strong></li>
+                        <li class="flex items-center pl-7"><svg class="w-5 h-5 text-brand-orange mr-2" fill="currentColor" viewBox="0 0 20 20"><path d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z"></path></svg>Hosting y Dominio incluidos.</li>
+                        <li class="flex items-center pl-7"><svg class="w-5 h-5 text-brand-orange mr-2" fill="currentColor" viewBox="0 0 20 20"><path d="M5 4a1 1 0 00-2 0v7.268a2 2 0 000 3.464V16a1 1 0 102 0v-1.268a2 2 0 000-3.464V4zM11 4a1 1 0 10-2 0v1.268a2 2 0 000 3.464V16a1 1 0 102 0V8.732a2 2 0 000-3.464V4zM16 3a1 1 0 011 1v7.268a2 2 0 010 3.464V16a1 1 0 11-2 0v-1.268a2 2 0 010-3.464V4a1 1 0 011-1z"></path></svg>Soporte técnico y actualizaciones mensuales.</li>
+                        <li class="flex items-center pl-7"><svg class="w-5 h-5 text-brand-orange mr-2" fill="currentColor" viewBox="0 0 20 20"><path d="M17.414 2.586a2 2 0 00-2.828 0L7 10.172V13h2.828l7.586-7.586a2 2 0 000-2.828z"></path><path fill-rule="evenodd" d="M2 6a2 2 0 012-2h4a1 1 0 010 2H4v10h10v-4a1 1 0 112 0v4a2 2 0 01-2 2H4a2 2 0 01-2-2V6z" clip-rule="evenodd"></path></svg>Gestión y subida de contenido institucional.</li>
+                     </ul>
+                    <div class="mt-6 bg-white p-4 rounded-md">
+                        <p class="text-sm text-gray-500">Coste del Servicio</p>
+                        <p class="font-title text-2xl font-bold text-brand-blue">549 USD <span class="text-lg font-normal text-gray-500">(pago único)</span></p>
+                        <p class="font-title text-2xl font-bold text-brand-blue mt-2">+ 324 USD <span class="text-lg font-normal text-gray-500">/ año</span></p>
+                        <p class="text-xs text-gray-500">(Mantenimiento, Hosting y Gestión)</p>
+                    </div>
+                </div>
+                <div class="order-1 md:order-2">
+                    <div class="section-icon bg-brand-orange mb-4">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"></path></svg>
+                    </div>
+                    <h3 class="font-title text-3xl font-bold section-title" style="border-color: var(--brand-orange);">Propuesta Integral: Diseño Web + Gestión</h3>
+                    <p class="mt-4 text-gray-600">La solución definitiva. Nos encargamos del diseño, implementación, alojamiento y mantenimiento continuo de su portal web, para que el consulado pueda centrarse en la atención ciudadana.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Tabla Comparativa -->
+        <section id="comparativa" class="mb-20">
+            <h3 class="font-title text-3xl font-bold text-center mb-12">Compare Nuestras Soluciones Digitales</h3>
+            <div class="overflow-x-auto">
+                <table class="w-full comparison-table">
+                    <thead>
+                        <tr>
+                            <th class="feature-name">Característica</th>
+                            <th>Chatbot (Setup)</th>
+                            <th>Chatbot (Soporte)</th>
+                            <th>Diseño Web</th>
+                            <th class="bg-blue-100">Web Integral</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="feature-name">Implementación de Chatbot</td>
+                            <td class="check-mark">✓</td><td class="check-mark">✓</td><td class="check-mark">✓</td><td class="check-mark">✓</td>
+                        </tr>
+                        <tr>
+                            <td class="feature-name">Soporte y Mantenimiento de Chatbot</td>
+                            <td class="cross-mark">2 semanas</td><td class="check-mark">Continuo</td><td class="cross-mark">✗</td><td class="check-mark">Continuo</td>
+                        </tr>
+                        <tr>
+                            <td class="feature-name">Diseño Web Institucional</td>
+                            <td class="cross-mark">✗</td><td class="cross-mark">✗</td><td class="check-mark">✓</td><td class="check-mark">✓</td>
+                        </tr>
+                        <tr>
+                            <td class="feature-name">Soporte y Mantenimiento Web</td>
+                            <td class="cross-mark">✗</td><td class="cross-mark">✗</td><td class="cross-mark">✗</td><td class="check-mark">✓</td>
+                        </tr>
+                        <tr>
+                            <td class="feature-name">Hosting y Dominio</td>
+                            <td class="cross-mark">✗</td><td class="cross-mark">✗</td><td class="cross-mark">✗</td><td class="check-mark">✓</td>
+                        </tr>
+                        <tr>
+                            <td class="feature-name">Gestión de Contenido</td>
+                            <td class="cross-mark">✗</td><td class="cross-mark">✗</td><td class="cross-mark">✗</td><td class="check-mark">✓</td>
+                        </tr>
+                        <tr class="font-bold">
+                            <td class="feature-name">Coste Inicial</td>
+                            <td>289 USD</td><td>N/A</td><td>549 USD</td><td>549 USD</td>
+                        </tr>
+                        <tr class="font-bold">
+                            <td class="feature-name">Coste Recurrente</td>
+                            <td>N/A</td><td>324 USD / año</td><td>N/A</td><td>324 USD / año</td>
+                        </tr>
+                         <tr>
+                            <td></td>
+                            <td><a href="#contacto" class="bg-gray-200 text-brand-blue font-bold py-2 px-4 rounded-lg hover:bg-gray-300">Contactar</a></td>
+                            <td><a href="#contacto" class="bg-gray-200 text-brand-blue font-bold py-2 px-4 rounded-lg hover:bg-gray-300">Contactar</a></td>
+                            <td><a href="#contacto" class="bg-gray-200 text-brand-blue font-bold py-2 px-4 rounded-lg hover:bg-gray-300">Contactar</a></td>
+                            <td><a href="#contacto" class="bg-brand-red text-white font-bold py-2 px-4 rounded-lg hover:bg-red-700">Seleccionar</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- FAQ -->
+        <section id="faq" class="mb-20 max-w-4xl mx-auto">
+            <h3 class="font-title text-3xl font-bold text-center mb-12">Preguntas Frecuentes</h3>
+            <div class="space-y-4">
+                <details class="bg-light-gray p-4 rounded-lg cursor-pointer">
+                    <summary class="font-semibold flex justify-between items-center">
+                        ¿Quién es el propietario del dominio y el sitio web?
+                        <span class="arrow-down transition-transform duration-300">▼</span>
+                    </summary>
+                    <p class="mt-2 text-gray-600">El Consulado es siempre el propietario del 100% de sus activos digitales. El dominio se registrará a nombre del Consulado, y al finalizar cualquier contrato, se entregan todos los accesos y archivos del sitio web.</p>
+                </details>
+                <details class="bg-light-gray p-4 rounded-lg cursor-pointer">
+                    <summary class="font-semibold flex justify-between items-center">
+                        ¿Qué sucede si necesitamos más actualizaciones de las incluidas en el plan integral?
+                        <span class="arrow-down transition-transform duration-300">▼</span>
+                    </summary>
+                    <p class="mt-2 text-gray-600">Las actualizaciones adicionales o funcionalidades complejas no incluidas (ej. sistema de citas) se pueden solicitar en cualquier momento y se presupuestarán por separado, siempre con aprobación previa.</p>
+                </details>
+                <details class="bg-light-gray p-4 rounded-lg cursor-pointer">
+                    <summary class="font-semibold flex justify-between items-center">
+                        ¿Cómo es el proceso de validación del diseño web?
+                        <span class="arrow-down transition-transform duration-300">▼</span>
+                    </summary>
+                    <p class="mt-2 text-gray-600">Presentaremos una propuesta de diseño inicial basada en la identidad del MIREX. A partir de ahí, trabajaremos en conjunto con el equipo del Consulado para realizar los ajustes necesarios hasta obtener la validación final antes de la implementación y publicación.</p>
+                </details>
+            </div>
+        </section>
+
+        <!-- Contacto -->
+        <section id="contacto" class="bg-brand-blue text-white rounded-lg py-20 px-6 text-center">
+            <h3 class="font-title text-4xl font-bold">¿Listo para transformar la atención consular?</h3>
+            <p class="mt-4 text-lg text-gray-300 max-w-2xl mx-auto">Comencemos hoy mismo a mejorar la experiencia de los ciudadanos dominicanos en Miami.</p>
+            <div class="mt-10 bg-white text-brand-blue inline-block p-6 rounded-lg shadow-2xl">
+                <p class="font-title font-bold text-xl">Hobnil A. Sánchez</p>
+                <p class="mt-2"><a href="tel:+34673802735" class="hover:text-brand-red">+34 673 80 27 35</a></p>
+                <p><a href="mailto:hola@hobnilsanchez.com" class="hover:text-brand-red">hola@hobnilsanchez.com</a></p>
+            </div>
+            <div class="mt-8 space-x-4">
+                <a href="mailto:hola@hobnilsanchez.com" class="bg-brand-red text-white font-bold py-3 px-8 rounded-lg text-lg hover:bg-red-700 transition duration-300">Agendar reunión ahora</a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="text-center py-8 text-sm text-gray-500">
+        <p>&copy; 2024 Hobnil A. Sánchez. Propuesta de Servicios Digitales.</p>
+    </footer>
+
+</body>
+</html>
